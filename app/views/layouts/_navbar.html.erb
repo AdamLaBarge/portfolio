@@ -3,7 +3,7 @@
     <li>
       <a href="#blog" class="no-hover group">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-        blog
+        home
       </a>
     </li>
     <li>
@@ -19,13 +19,21 @@
       </a>
     </li>
     <li>
-      <a href="#contact" class="group mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Contact Me">
+      <a onclick="contact_modal.showModal()"class="group mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Contact Me">
         <svg class="w-5 h-5 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 4.8-8-4.8V6h16zM4 18V8.402l8 4.8 8-4.8V18H4z"></path>
         </svg>
         contact
       </a>
     </li>
+    <!-- <li> -->
+    <!--   <a  class="group text-gray-600 transition-colors duration-300 hover:text-blue-500 no-hover" aria-label="Chat"> -->
+    <!--     <svg class="w-5 h-5 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+    <!--       <path d="M12 3C6.48 3 2 6.58 2 11c0 2.24 1.07 4.24 2.75 5.63l-1.11 4.11c-.21.78.55 1.45 1.26 1.18L8.81 19C10.35 19.63 11.94 20 13.5 20c5.52 0 10-3.58 10-8s-4.48-8-10-8zm0 14c-1.36 0-2.64-.36-3.75-1.02l-.27-.15-.36.11-2.2.73.71-2.64.1-.38-.28-.3C4.51 12.78 4 11.92 4 11c0-3.04 3.39-6 8-6s8 2.96 8 6-3.39 6-8 6z"></path> -->
+    <!--     </svg> -->
+    <!--     Chat -->
+    <!--   </a> -->
+    <!-- </li> -->
   </ul>
 </div>
 <div class="flex justify-center fixed top-14 left-0 right-0 -mt-2 z-20 ">
@@ -56,3 +64,11 @@
     </li>
   </ul>
 </div>
+<dialog id="contact_modal" class="modal">
+  <div class="modal-box w-11/12 max-w-5xl">
+    <%= render partial:'layouts/contact_form'%>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
