@@ -1,34 +1,37 @@
-<div class="flex justify-center relative pt-2 z-10">
-  <ul class="menu bg-base-200 lg:menu-horizontal rounded-box drop-shadow-md">
+<div class="flex justify-center fixed top-0 left-0 right-0 pt-2 z-30">
+  <ul class="menu bg-base-200 lg:menu-horizontal rounded-box drop-shadow-md ">
     <li>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" class=h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-      </div>
-    </li>
-    <li>
-      <a>
-        Blog
-        <div class="badge badge-xs badge-warning">NEW</div>
+      <a href="#blog" class="no-hover group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+        blog
       </a>
     </li>
     <li>
-      <a href="#contact">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        Contact
+      <a href="#timeline" class="no-hover group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        about
       </a>
     </li>
     <li>
-      <a href="#projects">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-        Projects
+      <a href="#projects" class="no-hover group">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+        projects
+      </a>
+    </li>
+    <li>
+      <a href="#contact" class="group mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Contact Me">
+        <svg class="w-5 h-5 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 4.8-8-4.8V6h16zM4 18V8.402l8 4.8 8-4.8V18H4z"></path>
+        </svg>
+        contact
       </a>
     </li>
   </ul>
 </div>
-<div class="flex justify-center relative -mt-3  z-9 ">
-  <ul class="menu bg-base-200 lg:menu-horizontal rounded-box drop-shadow-md">
+<div class="flex justify-center fixed top-14 left-0 right-0 -mt-2 z-20 ">
+  <ul class="menu bg-base-200 lg:menu-horizontal rounded-box pb-1 drop-shadow-md ">
     <li>
-      <a href="https://github.com/adamlabarge" target="_blank" rel="noopener noreferrer" class=" text-gray-600 transition-colors duration-300 hover:text-blue-500" aria-label="Github">
+      <a href="https://github.com/adamlabarge" target="_blank" rel="noopener noreferrer" class=" text-gray-600 transition-colors duration-300 hover:text-blue-500 no-hover" aria-label="Github">
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
           <path
@@ -38,9 +41,16 @@
       </a>
     </li>
     <li>
-      <a href="https://www.linkedin.com/in/adam-labarge-b8099182/" target="_blank" rel="noopener noreferrer" class=" text-gray-600 transition-colors duration-300 hover:text-blue-500 " aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/in/adam-labarge-b8099182/" target="_blank" rel="noopener noreferrer" class=" text-gray-600 transition-colors duration-300 hover:text-blue-500 no-hover" aria-label="LinkedIn">
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.269c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.269h-3v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-3v-9h3v1.312c.884-.631 1.963-1.312 3-1.312 2.485 0 4.5 2.015 4.5 4.5v4.5z"></path>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/AdamMLaBarge" target="_blank" rel="noopener noreferrer" class="group text-gray-600 transition-colors duration-300 hover:text-blue-500 no-hover" aria-label="Twitter">
+        <svg class="w-5 h-5 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
         </svg>
       </a>
     </li>
