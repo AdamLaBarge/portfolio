@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
   <head>
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,8 +11,15 @@
   </head>
   <body>
     <%= render partial: "layouts/navbar" %>
+    <% if notice.present? %>
+      <div data-controller="notice" class=" bg-green-50 text-green-500 font-medium rounded-lg inline-block text-center animate-pulse transition-opacity duration-500" id="notice"><%= notice %></div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="bg-red-50 text-red-500 font-medium rounded-lg inline-block text-center animate-pulse" id="alert" ><%= alert %></div>
+    <% end %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
+    <%= render partial: "layouts/footer"%>
   </body>
 </html>

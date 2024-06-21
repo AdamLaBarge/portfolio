@@ -1,0 +1,26 @@
+<%= form_with(model: contact_form, local: true) do |form| %>
+  <% if local_assigns[:expense] && contact_form.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(contact_form.errors.count, "error") %> prohibited this contact_form from being saved:</h2>
+      <ul>
+        <% contact_form.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="hero-content flex-col lg:flex-row-reverse " >
+    <div class="text-center lg:text-left ">
+      <h2 class="text-5xl font-bold">Contact me</h1>
+      <p class="py-5">If you would like to learn more about me, feel free to send me a message!</p>
+    </div>
+    <div class="card shrink1 w-full max-w-lg shadow-xl bg-base-100 mr-10">
+      <div class="form-control">
+        <%= form.text_field :email, class: "input w-full rounded-sm mt-5 ", placeholder: "email" %>
+        <%= form.text_field :subject, class: " input w-full rounded-sm mt-5 " , placeholder: "subject"%>
+        <%= form.text_area :message, rows: 5, class: " textarea w-full  rounded-sm mt-5" , placeholder: "message"%>
+        <%= form.submit "Submit", class: "btn btn-primary rounded-sm mt-5" %>
+      </div>
+    </div>
+  </div>
+<% end %>
