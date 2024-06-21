@@ -1,8 +1,19 @@
 <div class="container mx-auto pt-16 grid grid-cols-3 gap-4">
-  <div class="card col-span-2 bg-base-100 shadow-xl">
+  <div class="card col-span-2 bg-gradient-to-l from-primary shadow-xl">
     <div class="p-5">
-      <h1 class="text-5xl">Adam LaBarge</h1>
-      <h2 class="text-xl ">Software Engineer</h2>
+      <h1 class="text-5xl font-mono">Adam LaBarge</h1>
+      <div class="divider"></div>
+      <h2 class="text-xl font-mono italic ">Software Engineer</h2>
+      <div class="flex mt-8  -mb-5 justify-end">
+        <%= image_tag 'railslogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'rubylogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'sqllogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'javascriptlogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'reactlogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'tailwindlogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'htmllogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+        <%= image_tag 'csslogo', class: 'h-1/8 w-1/8 opacity-50  grayscale' %>
+      </div>
     </div>
   </div>
   <div class="card bg-base-100 row-span-2 shadow-xl">
@@ -42,6 +53,10 @@
       <%= render partial:'railscourses_project'%>
     </figure>
     <div class="card-body">
+      <h2 class="card-title">
+        RailsCourses.com 
+        <div class="badge badge-secondary">NEW</div>
+      </h2>
       <p>A site that curates a list of instructional Ruby on Rails courses </p>
       <div class="card-actions justify-end">
         <div class="badge badge-outline">Ruby</div>
