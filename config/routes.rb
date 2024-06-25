@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :contact_forms
   get 'home/index'
   get 'up' => 'rails/healh#show', as: :rails_health_check

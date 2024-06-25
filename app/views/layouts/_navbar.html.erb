@@ -26,6 +26,11 @@
         contact
       </a>
     </li>
+    <% if admin_signed_in? %>
+      <li>
+        <div class="hover:bg-red-500 hover:text-white"><%= button_to "Log Out", destroy_admin_session_path, method: :delete %> </div>
+      </li>
+    <% end %>
   </ul>
 </div>
 <dialog id="contact_modal" class="modal">
