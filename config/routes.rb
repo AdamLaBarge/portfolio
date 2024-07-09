@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   devise_for :admins
   resources :contact_forms
   get 'home/index'

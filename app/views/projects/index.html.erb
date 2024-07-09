@@ -1,0 +1,13 @@
+<div class="w-full">
+  <div class="divider divider-start font-bold text-4xl font-mono pb-10">projects</div>
+  <div id="projects" class="min-w-full">
+    <% @projects.each do |project| %>
+      <div class="card shadow-xl border-base-300 mb-10 p-10">
+        <%= render project %>
+        <p>
+          <%= link_to "Show this project", project, class: "ml-2 rounded-lg py-3 px-5 bg-primary text-black inline-block font-medium hover:bg-primary-700" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>
