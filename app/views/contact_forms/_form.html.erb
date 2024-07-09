@@ -16,10 +16,10 @@
     </div>
     <div class="card shrink1 w-full max-w-lg shadow-xl bg-base-100 mr-10">
       <div class="form-control">
-        <%= form.text_field :email, class: "input w-full rounded-sm mt-5 ", placeholder: "email" %>
-        <%= form.text_field :subject, class: " input w-full rounded-sm mt-5 " , placeholder: "subject"%>
-        <%= form.text_area :message, rows: 5, class: " textarea w-full  rounded-sm mt-5" , placeholder: "message"%>
-        <%= form.submit "Submit", class: "btn btn-primary rounded-sm mt-5" %>
+        <%= form.text_field :email, class: "input w-full rounded-sm mt-5 ", placeholder: "email", required:true, type:"email" %>
+        <%= form.text_field :subject, class: " input w-full rounded-sm mt-5 " , placeholder: "subject", required:true%>
+        <%= form.text_area :message, rows: 5, class: " textarea w-full  rounded-sm mt-5" , placeholder: "message", required:true%>
+        <%= form.submit "Submit", class: "btn btn-primary rounded-md mt-5" %>
       </div>
     </div>
   </div>

@@ -1,0 +1,18 @@
+<div id="<%= dom_id project %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= project.title %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Github:</strong>
+    <%= project.github %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Preview:</strong>
+    <iframe width="560" height="315" src="<%= project.youtube %> " title="youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= project.description %>
+  </p>
+</div>

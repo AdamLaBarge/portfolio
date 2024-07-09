@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth">
+<html class="scroll-smooth h-full">
   <head>
     <title>Portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,15 +9,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body>
-    <%= render partial: "layouts/navbar" %>
+  <body class="flex flex-col min-h-screen">
     <% if notice.present? %>
-      <div data-controller="notice" class=" bg-green-50 text-green-500 font-medium rounded-lg inline-block text-center animate-pulse transition-opacity duration-500" id="notice"><%= notice %></div>
+      <div data-controller="notice" role="notice" class="alert alert-success w-1/4 drop-shadow-md fixed top-4 right-4 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <%= notice %>
+      </div>
     <% end %>
     <% if alert.present? %>
-      <div class="bg-red-50 text-red-500 font-medium rounded-lg inline-block text-center animate-pulse" id="alert" ><%= alert %></div>
+      <div data-controller="alert" role="alert" class="alert alert-success opacity-90 w-1/4 drop-shadow-md fixed top-4 right-4 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        <%= alert %>
+      </div>
     <% end %>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <%= render partial: "layouts/navbar" %>
+    <div class="justify-center">
+    </div>
+    <main class="container mx-auto mt-28 px-5 flex-grow">
       <%= yield %>
     </main>
     <%= render partial: "layouts/footer"%>

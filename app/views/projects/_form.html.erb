@@ -1,0 +1,30 @@
+<div class="card shadow-2xl border-base-300 mb-10 mb-20 p-10">
+  <%= form_with(model: project, class: "contents") do |form| %>
+    <% if project.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+        <ul>
+          <% project.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <h1 class="font-mono text-3xl">New project</h1>
+    <div class="my-5">
+      <%= form.text_field :title,  placeholder:"Project Title", type:"text", required:true, class: "block shadow rounded-md border border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div class="my-5">
+      <%= form.text_field :github, placeholder:"Github Link", type:"url", required:true, class: "block shadow rounded-md border border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div class="my-5">
+      <%= form.text_field :youtube, placeholder:"YouTube Link", type:"url", required:true, class: "block shadow rounded-md border border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div class="my-5">
+      <%= form.text_area :description, rows: 4,  placeholder:"Project Description....", type:"text", required:true, class: "block shadow rounded-md border border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  </div>
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-primary text-black inline-block font-medium cursor-pointer hover:bg-primary-700" %>
+  </div>
+<% end %>
