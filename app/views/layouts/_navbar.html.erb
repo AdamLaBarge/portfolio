@@ -18,22 +18,28 @@
         projects
       </a>
     </li>
-    <li>
-      <a onclick="contact_modal.showModal()" class="group mx-1 md:mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Contact Me">
-        <svg class="w-5 h-5 md:w-6 md:h-6 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 4.8-8-4.8V6h16zM4 18V8.402l8 4.8 8-4.8V18H4z"></path>
-        </svg>
-        contact
-      </a>
-    </li>
     <% if admin_signed_in? %>
       <li>
-        <div><%= link_to "messages", contact_forms_path %></div>
+        <a href="/contact_forms"class="group mx-1 md:mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Messages">
+          <svg class="w-5 h-5 md:w-6 md:h-6 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 4.8-8-4.8V6h16zM4 18V8.402l8 4.8 8-4.8V18H4z"></path>
+          </svg>
+          messages
+        </a>
       </li>
       <li>
         <div class="hover:bg-red-500 hover:text-white"><%= button_to "Log Out", destroy_admin_session_path, method: :delete %></div>
       </li>
-    <% end %>
+    <% else %>
+      <li>
+        <a onclick="contact_modal.showModal()" class="group mx-1 md:mx-2 text-gray-600 transition-colors duration-300 no-hover" aria-label="Contact Me">
+          <svg class="w-5 h-5 md:w-6 md:h-6 fill-current text-gray-600 group-hover:text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 4.8-8-4.8V6h16zM4 18V8.402l8 4.8 8-4.8V18H4z"></path>
+          </svg>
+          contact
+        </a>
+      </li>
+    <% end%>
   </ul>
 </div>
 <dialog id="contact_modal" class="modal">
