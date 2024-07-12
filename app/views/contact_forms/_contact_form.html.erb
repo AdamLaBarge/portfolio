@@ -1,17 +1,17 @@
 <div id="<%= dom_id contact_form %>">
+  <div class="divider divider-start">
+    <%= contact_form.created_at.to_formatted_s(:short)%>
+  </div>
   <p class="my-5">
     <strong class="block font-medium mb-1">Email:</strong>
     <%= contact_form.email %>
   </p>
-
   <p class="my-5">
     <strong class="block font-medium mb-1">Subject:</strong>
     <%= contact_form.subject %>
   </p>
-
   <p class="my-5">
     <strong class="block font-medium mb-1">Message:</strong>
     <%= contact_form.message %>
   </p>
-
 </div>

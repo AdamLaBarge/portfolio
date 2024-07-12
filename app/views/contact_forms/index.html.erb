@@ -1,5 +1,11 @@
 <div class="w-full">
   <div class="divider divider-start font-bold text-4xl font-mono pb-10">messages</div>
+  <div class="dropdown dropdown-hover">
+    <div tabindex="0" role="button" class="btn btn-ghost rounded-box m-1 text-lg">Sort</div>
+    <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+      <%= sortable "created_at", "Date Added" %>
+    </ul>
+  </div>
   <% content_for :title, "Contact forms" %>
   <div id="contact_forms" class="min-w-full">
     <% @contact_forms.each do |contact_form| %>

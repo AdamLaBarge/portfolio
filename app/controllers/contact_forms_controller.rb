@@ -5,6 +5,7 @@ class ContactFormsController < ApplicationController
   # GET /contact_forms or /contact_forms.json
   def index
     @contact_forms = ContactForm.all
+    @contact_forms = @contact_forms.order(sort_column => sort_direction)
   end
 
   # GET /contact_forms/1 or /contact_forms/1.json
@@ -66,5 +67,14 @@ class ContactFormsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def contact_form_params
     params.require(:contact_form).permit(:email, :subject, :message)
+  end
+
+  def sort_column
+    allowed_columns = %w[title price created_at]
+    allowed_columns.include?(params[:sort]) ? params[:sort] : 'created_at'
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'desc'
   end
 end
