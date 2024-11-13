@@ -1,8 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["alert"]
-  static targets = ["notice"]
+  static targets = ["alert", "notice"]
 
   connect() {
     setTimeout(() => {

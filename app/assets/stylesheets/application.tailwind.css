@@ -2,6 +2,257 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+    --trans-time: 0.7s;
+}
+
+.submit {
+    width: 90%;
+}
+
 .no-hover:hover {
     background-color: inherit !important;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.mask {
+    clip-path: circle();
+    filter: grayscale(100%);
+    --size: 40%;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.see-more {
+    position: absolute;
+    transition: transform var(--trans-time) ease-in-out, width var(--trans-time) ease-in-out, height var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease;
+
+}
+
+.card {
+    position: relative;
+    width: 450px;
+    height: 600px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    box-shadow: 0 2px 12px #23232333;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform var(--trans-time) ease-in-out, width var(--trans-time) ease-in-out, height var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease;
+}
+
+.card.flipped-horizontal {
+    height: 800px;
+    width: 1400px;
+    transform: rotateY(180deg);
+    transform-origin: center center;
+    transition: transform var(--trans-time) ease-in-out, width var(--trans-time) ease-in-out, height var(--trans-time) ease-in-out, box-shadow var(--trans-time) ease;
+}
+
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: opacity var(--trans-time) ease-in-out, visibility var(--trans-time) ease-in-out;
+}
+
+/* Ensure only one side is visible at a time */
+.card:not(.flipped-horizontal):not(.flipped-vertical) .card-back {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card-front {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card.flipped-horizontal .card-front {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    transition: opacity var(--trans-time) ease-in-out, transform var(--trans-time) ease-in-out;
+}
+
+.card.flipped-horizontal .card-back {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity var(--trans-time) ease-in-out, transform var(--trans-time) ease-in-out;
+}
+
+.card-social {
+    transform: translateY(200%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    opacity: 0;
+    transition: opacity var(--trans-time) ease-in-out, transform var(--trans-time) ease-in-out;
+}
+
+.card-social__item {
+    list-style: none;
+}
+
+.card-social__item svg {
+    display: block;
+    height: 60px;
+    width: 60px;
+    fill: #515F65;
+    cursor: pointer;
+    transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.card-subtitle {
+    color: #859ba8;
+    font-size: 0.8em;
+}
+
+.card:hover {
+    box-shadow: 0 8px 50px #23232333;
+}
+
+.card:hover .card-info {
+    transform: translateY(-5%);
+}
+
+.card:hover .card-social {
+    transform: translateY(100%);
+    opacity: 1;
+}
+
+.card-social__item svg:hover {
+    fill: #232323;
+    transform: scale(1.1);
+}
+
+.card-avatar:hover {
+    transform: scale(1.1);
+}
+
+.group {
+    position: relative;
+}
+
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.input.textfield {
+    height: 100%;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input:focus~label,
+.input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 90%;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus~.bar:before,
+.input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus~.highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
 }

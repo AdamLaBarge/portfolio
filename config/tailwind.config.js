@@ -8,7 +8,7 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   daisyui: {
-    themes: ["pastel"],
+    themes: ["pastel", "business"],
   },
   theme: {
     extend: {

@@ -1,0 +1,20 @@
+<div class="card-back">
+  <div class="card-subtitle left-0 pl-10 pt-8 top-0 text-lg">
+    <div class="flip-back link font-bold no-underline">
+      <--
+    </div>
+        <!-- Flex container to display timeline and contact form side by side -->
+        <div class="flex w-full h-full gap-6">
+          <!-- Left side: Timeline -->
+          <div class="w-3/5">
+            <%= render 'timeline' %>
+          </div>
+          <!-- Right side: Contact Form -->
+          <div class="w-2/5">
+            <turbo-frame id="form">
+              <%= render 'contact_forms/form', contact_form: @contact_form %>
+            </turbo-frame>
+          </div>
+        </div>
+      </div>
+    </div>
